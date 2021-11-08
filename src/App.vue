@@ -1,13 +1,17 @@
 <template>
     <h1>Bases Vuex</h1>
+    <hr />
+    <Counter />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, defineAsyncComponent } from 'vue';
 
 export default defineComponent({
     name: 'App',
-    components: {}
+    components: {
+        Counter: defineAsyncComponent(() => import( /* webpackChunkName: "Counter" */ './components/Counter.vue')),
+    }
 });
 </script>
 
